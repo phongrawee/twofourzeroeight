@@ -52,24 +52,22 @@ namespace twozerofoureight
             }
             return result;
         }
-        //public bool Checkgameover()
-        //{
-        //    bool check=false;
-        //    foreach (int i in range)
-        //    {
-        //        foreach (int j in range)
-        //        {
-        //            if (board[i, j] == 32)
-        //            {
-        //               check = true;
-        //            }
-        //            else
-        //            {
-        //                check = false;
-        //            }
-        //        }
-        //    }return check;
-        //}
+        public bool Checkgameover()
+        {
+            bool check = false;
+            foreach (int i in range)
+            {
+                foreach (int j in range)
+                {
+                    if (board[i, j] == 2048)
+                    {
+                        check = true;
+                    }
+                }
+            }
+            return check;
+
+        }
 
         private void AddRandomSlot()
         {
