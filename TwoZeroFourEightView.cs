@@ -30,7 +30,7 @@ namespace twozerofoureight
             UpdateBoard(((TwoZeroFourEightModel)m).GetBoard());
             UpdateScore(((TwoZeroFourEightModel)m).GetScore());
             UpdateStatus(((TwoZeroFourEightModel)m).Checkgameover());
-
+            UpdateStatus(((TwoZeroFourEightModel)m).Checkgameover2());
         }
 
         private void UpdateTile(Label l, int i)
