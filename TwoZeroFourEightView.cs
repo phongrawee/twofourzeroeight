@@ -28,9 +28,9 @@ namespace twozerofoureight
         public void Notify(Model m)
         {
             UpdateBoard(((TwoZeroFourEightModel)m).GetBoard());
-            UpdateScore(((TwoZeroFourEightModel)m).GetScore());
-            UpdateStatus(((TwoZeroFourEightModel)m).Checkgameover());
-            UpdateStatus(((TwoZeroFourEightModel)m).Checkgameover2());
+            UpdateScore(((TwoZeroFourEightModel)m).GetScore());//Get function Getscore from model
+            UpdateStatus(((TwoZeroFourEightModel)m).Checkgameover());//Get function Checkgameover from model
+            UpdateStatus(((TwoZeroFourEightModel)m).Checkgameover2());//Get function Checkgameover from model
         }
 
         private void UpdateTile(Label l, int i)
@@ -43,7 +43,7 @@ namespace twozerofoureight
             {
                 l.Text = "";
             }
-            switch (i)
+            switch (i)//cool colors
             {
                 case 0:
                     l.BackColor = Color.Gray;
@@ -108,42 +108,42 @@ namespace twozerofoureight
         {
             lblscore.Text = Convert.ToString(score);
         }
-        private void UpdateStatus(bool status)
+        private void UpdateStatus(bool status)//function that display gameover when get 2048 and end game
         {
             if (status == true)
             {
-                lblstatus.Text = "Game Over!!!";
+                lblstatus.Text = "Game Over!!!";//display Gameover!!!
                 KeyPreview = false;
             }
         }
 
-        private void TwoZeroFourEightView_KeyDown(object sender, KeyEventArgs e)
+        private void TwoZeroFourEightView_KeyDown(object sender, KeyEventArgs e)//function that use arrow and wasd to move
         {
             if (KeyPreview == true) {
                 switch (e.KeyData)
                 {
                     case Keys.Up:
                     case Keys.W:
-                        controller.ActionPerformed(TwoZeroFourEightController.UP);
+                        controller.ActionPerformed(TwoZeroFourEightController.UP);//function move up from controller
                         break;
                     case Keys.Down:
                     case Keys.S:
-                        controller.ActionPerformed(TwoZeroFourEightController.DOWN);
+                        controller.ActionPerformed(TwoZeroFourEightController.DOWN);//function move down from controller
                         break;
                     case Keys.Left:
                     case Keys.A:
-                        controller.ActionPerformed(TwoZeroFourEightController.LEFT);
+                        controller.ActionPerformed(TwoZeroFourEightController.LEFT);//function move left from controller
                         break;
                     case Keys.Right:
                     case Keys.D:
-                        controller.ActionPerformed(TwoZeroFourEightController.RIGHT);
+                        controller.ActionPerformed(TwoZeroFourEightController.RIGHT);//function move right from controller
                         break;
                 }
 
             }
         }
 
-        private void btn_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        private void btn_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)//function that can use arrow to move
         {
             switch (e.KeyCode)
             {

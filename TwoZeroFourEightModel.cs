@@ -40,7 +40,7 @@ namespace twozerofoureight
         {
             return board;
         }
-        public int GetScore()
+        public int GetScore()//fucntion that calculate game score
         {
             int result = 0;
             foreach (int i in range)
@@ -52,7 +52,7 @@ namespace twozerofoureight
             }
             return result;
         }
-        public bool Checkgameover()
+        public bool Checkgameover()//function that check when node has 2048
         {
             bool check = false;
             foreach (int i in range)
@@ -69,7 +69,7 @@ namespace twozerofoureight
             return check;
 
         }
-        public bool Checkgameover2()
+        public bool Checkgameover2()//function that check when all nodes can not merge
         {
             for (int i = 0; i < boardSize; i++)
             {
